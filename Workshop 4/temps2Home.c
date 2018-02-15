@@ -24,7 +24,7 @@ int main(void) {
    int totalHigh = 0;
    int totalLow = 0;
 
-   
+
 
    printf("---=== IPC Temperature Calculator V2.0 ===---");
    printf("\nPlease enter the number of days, between 3 and 10, inclusive: ");
@@ -39,10 +39,10 @@ int main(void) {
 
    for (numDay = 1; numDay <= numberOfDays; numDay++) { //Prompts the user for input until the numDay is equal to NUMS
 
-      printf("\nEnter the high value for day %d: ", numDay);
+      printf("\nDay %d - High: : ", numDay);
       scanf("%d", &highValue[numDay]);
 
-      printf("\nEnter the low value for day %d: ", numDay);
+      printf("n\Day %d - Low:  ", numDay);
       scanf("%d", &lowValue[numDay]);
 
       lowestValue = lowValue[numDay];
@@ -68,8 +68,9 @@ int main(void) {
 
 
    for (numDay = 1; numDay <= numberOfDays; numDay++) {
-      printf("Day      High          Low\n");
-      printf("%d:       %d       %d\n", numDay, highValue[numDay], lowValue[numDay]);
+      printf("\n");
+      printf("Day  Hi  Low\n");
+      printf("%d    %d    %d\n", numDay, highValue[numDay], lowValue[numDay]);
    }
 
 
@@ -102,8 +103,8 @@ int main(void) {
       else {
          printf("\nGoodbye!\n");
       }
-   } while (validNumber <= numberOfDays && validNumber > 0); 
+   } while (validNumber <= numberOfDays && validNumber > 0);
 
 
    return 0;
-   }
+}
