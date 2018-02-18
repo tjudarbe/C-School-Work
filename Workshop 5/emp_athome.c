@@ -101,7 +101,7 @@ int main(void) {
 
          break;
       case 3:
-
+         flag = 0;
          printf("Update Information\n");
          printf("===================\n");
          do {
@@ -114,17 +114,20 @@ int main(void) {
                   printf("Enter New Salary: ");
                   scanf("%lf ", &newSalary);
                   emp[i].salary = newSalary;
-                  
+                  emp[i].id = empId;
+                  flag = 1;
                }
+               
             }
             printf("\n");
-         } while (empId == emp[i].id);
+         } while (empId != emp[i].id && flag == 0); //Change condition
          break;
      
       
       case 4:
          printf("Remove Employee\n");
          printf("===============\n");
+         flag = 0;
          do {
             printf("Enter Employee ID: ");
             scanf("%d", &empId);
@@ -134,13 +137,13 @@ int main(void) {
                   printf("Employee %d will be removed\n", emp[i].id);
                   emp[i].id = 0;
                   numEmployees -= 1;
-                  
+                  flag = 1;
                }
 
             }
             printf("\n");
 
-         } while (empId == emp[i].id);
+         } while (empId != emp[i].id && flag == 0); //Change condition
         
          break;
         
