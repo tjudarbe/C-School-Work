@@ -1,0 +1,9 @@
+﻿  contacts.c
+c:\users\troyu\desktop\ipc-project-master\ipc-project-master\a1\ms4\contacts.c(27): warning C4028: formal parameter 1 different from declaration
+c:\users\troyu\desktop\ipc-project-master\ipc-project-master\a1\ms4\contacts.c(47): warning C4028: formal parameter 1 different from declaration
+  a1ms4.c
+c:\users\troyu\desktop\ipc-project-master\ipc-project-master\a1\ms4\a1ms4.c(40): warning C4133: 'function': incompatible types - from 'Name *' to 'Contact *'
+c:\users\troyu\desktop\ipc-project-master\ipc-project-master\a1\ms4\a1ms4.c(41): warning C4133: 'function': incompatible types - from 'Address *' to 'Contact *'
+  Generating Code...
+  A1MS4.vcxproj -> C:\Users\troyu\Desktop\IPC-Project-master\IPC-Project-master\A1\MS4\Debug\A1MS4.exe
+  A1MS4.vcxproj -> C:\Users\troyu\Desktop\IPC-Project-master\IPC-Project-master\A1\MS4\Debug\A1MS4.pdb (Partial PDB)
