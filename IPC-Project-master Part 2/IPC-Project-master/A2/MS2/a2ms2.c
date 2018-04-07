@@ -125,7 +125,7 @@ Testing: getContact(struct Contact *)
 ------------------------------------------
 Please enter the contact's first name: Tom
 Do you want to enter a middle initial(s)? (y or n): yes
-*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: y
+*** INVALID ENTRY *** <Only (Y)es or (N)o are acceptable>: y 
 Please enter the contact's middle initial(s): Wong
 Please enter the contact's last name: Song
 Please enter the contact's street number: one two
