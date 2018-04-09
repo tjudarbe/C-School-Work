@@ -21,8 +21,8 @@ Milestone:  4
 // ----------------------------------------------------------
 // Include your contactHelpers header file on the next line:
 #include "contactHelpers.h"
-#include "contacts.h"
 #include <string.h>
+#include "contacts.h"
 
 
 // ----------------------------------------------------------
@@ -122,7 +122,8 @@ void ContactManagerSystem(void) {
       printf("\n");
       switch (option) {
       case 1:
-         printf("<<< Feature 1 is unavailable >>>\n");
+
+         displayContacts(&contact, 5);
          printf("\n");
          pause();
          printf("\n");
@@ -194,12 +195,12 @@ void getTenDigitPhone(char telNum[])
 }
 
 // findContactIndex
-int findContactIndex(const struct Contact contacts[], int size, const char cellNum[])
+int findContactIndex(const struct Contact contact[], int size, const char cellNum[])
 {
    int i;
    int foundIndex = -1;
    for (i = 0; foundIndex == -1 && i < size; i++) {
-      if (strstr(contacts[i].numbers, cellNum[i])) {
+      if (strstr(contact[i].numbers->cell, cellNum[i])) {
          foundIndex = i;
 
       }
@@ -207,11 +208,11 @@ int findContactIndex(const struct Contact contacts[], int size, const char cellN
    return foundIndex;
 }
 
-
 // displayContactHeader
 void displayContactHeader(void) {
    printf("+-----------------------------------------------------------------------------+\n");
-   printf("|                              Contacts Listing                              |\n");
+   printf("|                              Contacts Listing                               |\n");
+   printf("+-----------------------------------------------------------------------------+\n");
 }
 
 // displayContactFooter
@@ -225,36 +226,51 @@ void displayContactFooter(int numContacts) {
 
 // displayContact:
 void displayContact(const struct Contact*contacts) {
-   printf("%s", contacts->name);
+
+   printf("%s", contacts->name.firstName);
    printf('\n');
-   printf("    C: %-10s    H: %-10s    B: %-10s\n", contacts->numbers->cell, contacts->numbers->home, 
-                                                    contacts->numbers->business);
+   printf("    C: %-10s    H: %-10s    B: %-10s\n", contacts->numbers->cell, contacts->numbers->home,
+      contacts->numbers->business);
    if (contacts->address.apartmentNumber > 0) {
       printf("       %d %s, Apt# %d, %s, %s\n", contacts->address.streetNumber, contacts->address.street,
          contacts->address.apartmentNumber, contacts->address.city, contacts->address.postalCode);
-         
+
    }
    else {
       printf("       %d %s, %s, %s\n", contacts->address.streetNumber, contacts->address.street,
-                                       contacts->address.city, contacts->address.postalCode);
-                                            
-      }
-   }
+         contacts->address.city, contacts->address.postalCode);
 
-
-// displayContacts:
-void displayContacts(const struct Contact contacts[], int size) {
-   displayContactHeader();
-   int i = 0;
-   for (i = 0; i < size; i++) {
-      if(contacts->numbers->cell[i] > 0){
-         displayContact();
-      }
    }
 }
 
-// searchContacts:
 
+
+// displayContacts:
+
+void displayContacts(const struct Contact contact[], int size) {
+   displayContactHeader();
+   int i = 0;
+   int numContacts;
+   for (i = 0; i < size; i++) {
+      if (contact->numbers->cell[i] > 0) {
+         displayContact(contact);
+         numContacts += 1;
+      }
+
+   }
+   displayContactFooter(numContacts);
+}
+
+// searchContacts:
+void searchContacts(const struct Contact search[], int size) {
+   printf("Enter the cell number for the contact: ");
+   scanf("%s", search->numbers->cell);
+   while (strlen(search->numbers->cell) > 10){
+      scanf("%s", search->numbers->cell);
+}
+   findContactIndex(&search, 5,;
+
+}
 
 // addContact:
 

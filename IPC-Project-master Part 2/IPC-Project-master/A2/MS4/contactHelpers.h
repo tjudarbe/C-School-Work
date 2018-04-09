@@ -11,13 +11,13 @@ Milestone:  4
 Description: This header file modularizes general helper functions to
 help reduce redundant coding for common repetative tasks.
 ---------------------------------------------------------------------*/
-#include <stdio.h>
 
-#include <string.h>
+
+
 
 // Hint:  This header file now has functions with parameters referring to 
 //        the struct Contact type so be sure to include the contacts.h header:
-#include "contacts.h"
+
 
 //------------------------------------------------------
 // Function Prototypes
@@ -55,7 +55,7 @@ void ContactManagerSystem(void);
 void getTenDigitPhone(char[]);
 
 // findContactIndex:
-int findContactIndex(const struct Contact[], int, const char[]);
+int findContactIndex(const struct Contact* contact, int size, const char cellNum[]);
 
 // displayContactHeader:
 void displayContactHeader(void);

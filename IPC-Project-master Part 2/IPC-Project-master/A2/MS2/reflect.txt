@@ -1,0 +1,9 @@
+1.) A function is a block of code that performas a procedure or routine. 
+    Every function has parameters. These parameters hold values and are passed on when you call the
+    function in the main body of the program. However functions can contain no values in their parameters.
+    The functions are important to have in any programming language because it organizes your code.
+    Instead of having all the code in one body functions allow us to seperate them and organize our code
+    which makes it easier to debug our programs especially for big projects.
+
+2.) I think the hlper functions are in a different module because they return void and in the 
+    contacts module the functions are returning values.
