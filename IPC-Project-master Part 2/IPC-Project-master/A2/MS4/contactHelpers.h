@@ -55,7 +55,7 @@ void ContactManagerSystem(void);
 void getTenDigitPhone(char[]);
 
 // findContactIndex:
-int findContactIndex(const struct Contact* contact, int size, const char cellNum[]);
+int findContactIndex(const struct Contact[], int , const char[]);
 
 // displayContactHeader:
 void displayContactHeader(void);
